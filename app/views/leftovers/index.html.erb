@@ -1,0 +1,22 @@
+<h2>余りがちな食材</h2>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+
+      <thead class="thead-light">
+        <th>食材</th>
+      </thead>
+
+      <tbody>
+        <table>
+            <ul>
+                <% @leftovers.each do |leftover| %>
+                    <li><%= leftover.ingredient %></li>
+                    <p>[link]</p>
+                <% end %>
+            </ul>
+        </table>
+      </tbody>
+    </table>
+  </div>
+</div>

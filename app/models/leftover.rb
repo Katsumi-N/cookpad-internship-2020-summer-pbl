@@ -1,0 +1,2 @@
+class Leftover < ApplicationRecord
+end
