@@ -18,12 +18,14 @@
           <tr>
             <td><%= recipe.title %></td>
             <td>
-              <% @recipes.each do |ingredient| %>
-                <%= ingredient.name %>
+              <% recipe.ingredients.all.each do |ingredient| %>
+                <% unless ingredient == @target_ingredient %>
+                  +<%= ingredient.name %>
+                <% end %>
               <% end %>
             </td>
             <td><%= recipe.time %>分</td>
-            <td><%=link_to "リンク"%></td>
+            <td><%=link_to "リンク", recipe.url %></td>
           </tr>
 
         
