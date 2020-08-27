@@ -1,14 +1,20 @@
-<h3>プラスで簡単スイーツ</h3>
+<div class="jumbotron">
+  <div class="container">
+    <h3>プラスで簡単スイーツ</h3>
+  </div>
+</div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12" style="height:500px; width:600px; overflow-y:scroll; overflow-x:scroll;">
     <table class="table table-striped">
 
       <thead class="thead-light">
         <tr>
+          <th>イメージ</th>
           <th>料理名</th>
-          <th>材料</th>
-          <th>時間</th>
-          <th>リンク</th>
+          <th>追加材料</th>
+          <th>時間の目安</th>
+          <th>備考</th>
+          <th>詳細レシピ</th>
         </tr>
       </thead>
 
@@ -16,6 +22,7 @@
         選択中の材料→<%= @target_ingredient.name %>
         <% @target_recipes.each do |recipe| %>
           <tr>
+            <td><%= image_tag "#{recipe.image}.jpg", width: '80px', height: '80px' %></td>
             <td><%= recipe.title %></td>
             <td>
               <% recipe.ingredients.all.each do |ingredient| %>
@@ -25,15 +32,12 @@
               <% end %>
             </td>
             <td><%= recipe.time %>分</td>
-            <td><%=link_to "リンク", recipe.url %></td>
+            <td><%= recipe.remarks %></td>
+            <td><%=link_to "#{recipe.title}", recipe.url %></td>
           </tr>
-
-        
         <% end %>
-
-        
-        
       </tbody>
     </table>
+    <%=link_to '一覧に戻る', leftovers_path, class:'btn btn-primary'%>
   </div>
 </div>

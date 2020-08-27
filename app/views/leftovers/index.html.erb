@@ -1,4 +1,8 @@
-<h3>スイーツ作りで余りがちな食材</h3>
+<div class="jumbotron">
+  <div class="container">
+    <h3>余りがちな材料で簡単スイーツ！</h3>
+  </div>
+</div>
 <div class="search-form">
   <%= search_form_for @search, url: leftovers_path do |f|%>
     <%= f.label :name_cont, '材料名' %>
@@ -8,21 +12,25 @@
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12" style="height:500px; width:600px; overflow-y:scroll">
     <table class="table table-striped">
 
       <thead class="thead-light">
         <tr>
+          <th>イメージ</th>
           <th>食材</th>
-          <th>レシピ</th>
+          <th>消費期限(開封済み目安)</th>
+          <th>スイーツ</th>
         </tr>
       </thead>
 
       <tbody>
         <% @leftovers.each do |ingredient| %>
           <tr>
+            <td><%= image_tag "#{ingredient.image}.jpg", width: '80px', height: '80px' %></td>
             <td><%= ingredient.name %></td>
-            <td><%=link_to "→簡単消費レシピ", plusmenu_path(ingredient.id) %></td>
+            <td><%= ingredient.limit %>日</td>
+            <td><%=link_to "→#{ingredient.name}の簡単消費レシピ", plusmenu_path(ingredient.id) %></td>
           </tr>
         <% end %>
       </tbody>
