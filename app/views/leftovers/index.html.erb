@@ -1,21 +1,22 @@
-<h2>スイーツ作りで余りがちな食材</h2>
+<h3>スイーツ作りで余りがちな食材</h3>
 <div class="row">
   <div class="col-md-12">
     <table class="table table-striped">
 
       <thead class="thead-light">
-        <th>食材</th>
+        <tr>
+          <th>食材</th>
+          <th>レシピ</th>
+        </tr>
       </thead>
 
       <tbody>
-        <table>
-            <ul>
-                <% @leftovers.each do |ingredient| %>
-                    <li><%= ingredient.name %></li>
-                    <p><%=link_to "→簡単消費レシピ", plusmenu_path(ingredient.id) %></p>
-                <% end %>
-            </ul>
-        </table>
+        <% @leftovers.each do |ingredient| %>
+          <tr>
+            <td><%= ingredient.name %></td>
+            <td><%=link_to "→簡単消費レシピ", plusmenu_path(ingredient.id) %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
