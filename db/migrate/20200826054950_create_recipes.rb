@@ -3,7 +3,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
     create_table :recipes do |t|
       t.string :title
       t.string :url
-      t.integer :like
+      t.integer :time
 
       t.timestamps
     end

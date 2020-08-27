@@ -1,0 +1,6 @@
+<h2>プラスで簡単スイーツ</h2>
+選択中の材料→<%= @target_ingredient.name %>
+
+<% @target_recipes.each do |recipe| %>
+  <p><%= recipe.title%></p>
+<% end %>

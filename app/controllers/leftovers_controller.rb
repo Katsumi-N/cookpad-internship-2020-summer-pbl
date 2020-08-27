@@ -1,5 +1,5 @@
 class LeftoversController < ApplicationController
   def index
-    @leftovers = Leftover.all
+    @leftovers = Ingredient.all
   end
 end
