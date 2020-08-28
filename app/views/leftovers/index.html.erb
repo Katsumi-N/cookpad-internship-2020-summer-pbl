@@ -1,12 +1,13 @@
 <div class="jumbotron">
   <div class="container">
-    <h3>余りがちな材料で簡単スイーツ！</h3>
+    <h3>Amari_Arrange</h3>
+    <p>スイーツ作りなどで余った材料を使って別のスイーツを作ろう</p>
   </div>
 </div>
-<div class="search-form">
-  <%= search_form_for @search, url: leftovers_path do |f|%>
-    <%= f.label :name_cont, '材料名' %>
-    <%= f.search_field :name_cont %>
+<div class="search-form" >
+  <%= search_form_for @q, url: leftovers_path, id:"ingredient_form", remote:false do |f|%>
+    <%= f.label :othername_cont, '材料名' %>
+    <%= f.search_field :othername_cont %>
     <%= f.submit %>
   <% end %>
 </div>
@@ -19,12 +20,12 @@
         <tr>
           <th>イメージ</th>
           <th>食材</th>
-          <th><%= sort_link(@search, :limit, '消費期限') %></th>
-          <th>スイーツ</th>
+          <th><%= sort_link(@q, :limit, '消費期限') %></th>
+          <th>レシピ一覧</th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody id='ingredient_main'>
         <% @leftovers.each do |ingredient| %>
           <tr>
             <td><%= image_tag "#{ingredient.image}.jpg", width: '80px', height: '80px' %></td>
