@@ -12,7 +12,7 @@ ingredient11 = Ingredient.create(id:11, name:'いちご',image:'ichigo',limit:3)
 ingredient12 = Ingredient.create(id:12, name:'バナナ',image:'banana',limit:7)
 
 recipe1 = Recipe.create(id:1, title:'ホットケーキ', time:30,url:'https://cookpad.com/recipe/1450771',remarks:'フルーツ乗せてもおいしい',image:'hotcake')
-recipe2 = Recipe.create(id:2, title:'ガトーショコラ', time:50,url:'https://cookpad.com/recipe/6403057',remarks:'',image:'gato')
+recipe2 = Recipe.create(id:2, title:'ガトーショコラ', time:50,url:'https://cookpad.com/recipe/6403057',remarks:'混ぜて焼くだけ簡単',image:'gato')
 recipe3 = Recipe.create(id:3, title:'クッキー', time:30,url:'https://cookpad.com/recipe/6397843',remarks:'お好みでチョコやドライフルーツなども',image:'cookie')
 recipe4 = Recipe.create(id:4, title:'ゼリー', time:10,url:'https://cookpad.com/recipe/6414320',remarks:'お好みでフルーツなど',image:'zeri')
 recipe5 = Recipe.create(id:5, title:'メレンゲクッキー', time:30,url:'https://cookpad.com/recipe/6330441',remarks:'',image:'melenge')

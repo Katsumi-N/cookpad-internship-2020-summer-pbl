@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12" style="height:500px; width:600px; overflow-y:scroll; overflow-x:scroll;">
+  <div class="col-md-12" style="height:500px; overflow-y:scroll; overflow-x:scroll;">
     <table class="table table-striped">
 
       <thead class="thead-light">
@@ -12,8 +12,8 @@
           <th>イメージ</th>
           <th>料理名</th>
           <th>追加材料</th>
-          <th>時間の目安</th>
-          <th>備考</th>
+          <th width="130"><%= sort_link(@q, :time, "かかる時間で並び替え") %> </th>
+          <th width="300">備考</th>
           <th>詳細レシピ</th>
         </tr>
       </thead>
@@ -38,6 +38,7 @@
         <% end %>
       </tbody>
     </table>
-    <%=link_to '一覧に戻る', leftovers_path, class:'btn btn-primary'%>
+    
   </div>
+  <%=link_to '一覧に戻る', leftovers_path, class:'btn btn-primary'%>
 </div>
